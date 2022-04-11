@@ -1,8 +1,28 @@
 import React from 'react';
-const TodoList = () => {
+import { connect } from 'react-redux';
+import Input from '../Components/Input';
+import Table from '../Components/Table';
+
+const TodoList = ({
+  todos
+}) => {
+  const header = ['id', 'Content'];
+  const body = [];
+  todos.map((todo) => {
+    body.push([todo.id, todo.content]);
+  })
   return (
-    <div>TodoList</div>
+    <React.Fragment>
+      <Input />
+      <Table tableBody={body} tableHeader={header} isTodos={true} />
+    </React.Fragment>
   )
 }
 
-export default TodoList;
+const mapStateToProps = state => {
+  return {
+    todos: state.todoReducer.todos
+  }
+};
+
+export default connect(mapStateToProps)(TodoList);
