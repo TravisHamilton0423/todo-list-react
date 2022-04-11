@@ -1,0 +1,23 @@
+.head-app {
+  padding: 20px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  color: #4a4a4a;
+  font-size: 1.5rem;
+  .head-logo {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    span {
+      padding-left: 20px;
+    }
+  }
+  .nav-items {
+    .nav-item {
+      padding-left: 2rem;
+      text-decoration: none;
+    }
+  }
+}
