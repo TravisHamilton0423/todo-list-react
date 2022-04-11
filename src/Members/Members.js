@@ -5,12 +5,14 @@ import memberData from '../Json/Members.json';
 const Members = () => {
   const members = memberData.members;
   const header = Object.keys(members[0]);
-  const body = [];
+  let body = [];
+  let teams = [];
   members.forEach((member) => {
-    body.push([member.id, member.first_name, member.last_name, member.email, member.team.id])
+    body.push([member.id, member.first_name, member.last_name, member.email])
+    teams.push(member.team);
   })
   return (
-    <Table tableHeader={header} tableBody={body} />
+    <Table tableHeader={header} tableBody={body} teams={teams} />
   )
 }
 

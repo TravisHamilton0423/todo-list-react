@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { useHistory } from 'react-router-dom';
 import { TODO_SET_STATE, TODO_DELETE } from '../Todos/Redux/constants';
 import './table.scss';
 
@@ -8,13 +9,18 @@ const Table = ({
   tableBody,
   isTodos,
   setCurrentState,
-  deleteTodo
+  deleteTodo,
+  teams
 }) => {
+  const history = useHistory();
   const onEdit = (id) => {
     setCurrentState(id);
   }
   const onDelete = (id) => {
     deleteTodo(id);
+  }
+  const onTeam = (id) => {
+    history.push(`/team/${id}`)
   }
 
   return (
@@ -36,6 +42,9 @@ const Table = ({
             {rowData.map((cellData, idx) => (
               <div className={"col col-" + (idx + 1)} data-label={idx} key={idx}>{cellData}</div>
             ))}
+            {teams &&
+              <div className={"col col-5 table-button"} data-label={idx} onClick={() => onTeam(teams[idx].id)}>{teams[idx].name}</div>
+            }
             {isTodos &&
               <React.Fragment>
                 <div className='col col-1 table-button' onClick={() => onEdit(rowData[0])}>Edit</div>
