@@ -10,11 +10,11 @@ import {
 const defaultState = {
   todos: [
     {
-      id: uuid(),
+      id: 1,
       content: 'React is JS library',
     },
     {
-      id: uuid(),
+      id: 2,
       content: 'Redux is State Management Library'
     }
   ],

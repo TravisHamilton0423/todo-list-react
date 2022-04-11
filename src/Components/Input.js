@@ -14,12 +14,13 @@ const Input = ({
   const [text, setText] = useState("");
 
   const onClick = () => {
+    const length = todos.length;
     if(text === "") return;
     if(currentState) {
       setEdit(currentState, text);
     } else {
       addTodo({
-        id: uuid(),
+        id: length ? todos[length - 1].id + 1 : 1,
         content: text
       })
     }

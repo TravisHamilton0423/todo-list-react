@@ -6,6 +6,14 @@
   background-color: #fff;
   color: #4a4a4a;
   font-size: 1.5rem;
+  .head-main-btn  {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    .mobile-menu  {
+      display: none;
+    }
+  }
   .head-logo {
     display: flex;
     align-items: center;
@@ -18,6 +26,35 @@
     .nav-item {
       padding-left: 2rem;
       text-decoration: none;
+    }
+  }
+}
+
+@media all and (max-width: 767px) {
+  .head-app {
+    padding: 10px 50px;
+    flex-direction: column;
+    .head-main-btn  {
+      .mobile-menu  {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        background-color: white;
+        font-size: 25px;
+      }
+    }
+    .nav-items {
+      display: none;
+    }
+    .active {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      .nav-item {
+        margin-top: 15px;
+      }
     }
   }
 }

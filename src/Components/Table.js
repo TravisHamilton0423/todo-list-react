@@ -40,10 +40,10 @@ const Table = ({
         {tableBody && tableBody.map((rowData, idx) => (
           <li className="table-row" key={idx} >
             {rowData.map((cellData, idx) => (
-              <div className={"col col-" + (idx + 1)} data-label={idx} key={idx}>{cellData}</div>
+              <div className={"col col-" + (idx + 1)} data-label={tableHeader[idx]} key={idx}>{cellData}</div>
             ))}
             {teams &&
-              <div className={"col col-5 table-button"} data-label={idx} onClick={() => onTeam(teams[idx].id)}>{teams[idx].name}</div>
+              <div className={"col col-5 table-button"} data-label={tableHeader[4]} onClick={() => onTeam(teams[idx].id)}>{teams[idx].name}</div>
             }
             {isTodos &&
               <React.Fragment>
