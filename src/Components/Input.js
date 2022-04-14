@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
-import uuid from 'react-uuid';
 import { TODO_ADD, TODO_EDIT } from '../Todos/Redux/constants';
 const Input = ({
   addTodo,

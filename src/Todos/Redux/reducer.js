@@ -1,5 +1,3 @@
-import uuid from 'react-uuid';
-
 import {
   TODO_ADD,
   TODO_DELETE,

@@ -1,18 +1,9 @@
-import {
-  Switch,
-  Route,
-} from "react-router-dom";
-
 import TodoList from './TodoList';
 
-function App() {
+function Todos() {
   return (
-    <div className="App">
-      <Switch>
-        <Route exact path="/todos" component={TodoList} />
-      </Switch>
-    </div>
+    <TodoList />
   );
 }
 
-export default App;
+export default Todos;
