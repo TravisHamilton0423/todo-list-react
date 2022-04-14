@@ -6,12 +6,7 @@ const teams = teamData.teams;
 
 const Teams = () => {
   const header = Object.keys(teams[0]);
-  let body = [];
-  teams.map((team) => {
-    let arr = [];
-    header.map((key) => arr.push(team[key]));
-    body.push(arr);
-  })
+  let body = teams.reduce((result, team) => [...result, header.map((key) => team[key])], []);
   return (
     <Table tableBody={body} tableHeader={header} />
   )

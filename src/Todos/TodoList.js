@@ -7,10 +7,7 @@ const TodoList = ({
   todos
 }) => {
   const header = ['id', 'Content'];
-  const body = [];
-  todos.map((todo) => {
-    body.push([todo.id, todo.content]);
-  })
+  let body = todos.map((todo) => [todo.id, todo.content]);
   return (
     <React.Fragment>
       <Input />

@@ -9,34 +9,21 @@ import './styles.scss';
 
 const Head = () => {
   const history = useHistory();
-  const [mobile, setMobile] = useState(false);
   const [visible, setVisible] = useState(true);
 
   const handleResize = () =>  {
     if(window.innerWidth < 767) {
-      setMobile(true);
       setVisible(false);
     }
     else {
-      setMobile(false);
       setVisible(true);
     }
   }
 
   useEffect(() => {
-    if(window.innerWidth < 767) {
-      setMobile(true);
-      setVisible(false);
-    }
-    else {
-      setMobile(false);
-      setVisible(true);
-    }
-  }, [])
-
-  useEffect(() => {
     window.addEventListener('resize', handleResize);
-  })
+    return () => window.removeEventListener('resize', handleResize);
+  }, [])
 
   return (
     <div className='head-app'>
